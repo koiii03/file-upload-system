@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css" />
+  <title>Axel's Photocopy and Printing</title>
+</head>
+<body>
+  <div class="theme-toggle">
+    <label class="switch">
+      <input type="checkbox" id="toggle-theme">
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <div class="container fade-in">
+    <header>
+      <h1>🖨️ Axel's Photocopy & Printing</h1>
+      <p>Upload your file below for printing</p>
+    </header>
+
+    <form action="http://192.168.1.44:5000/upload" method="POST" enctype="multipart/form-data">
+      <label for="fileInput" class="file-label">
+        📁 Choose File
+        <input type="file" name="file" id="fileInput" required />
+      </label>
+      <button type="submit">📤 Upload File</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('toggle-theme').addEventListener('change', () => {
+      document.body.classList.toggle('dark');
+    });
+  </script>
+</body>
+</html>
